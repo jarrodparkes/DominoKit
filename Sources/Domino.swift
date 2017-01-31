@@ -12,24 +12,24 @@ public struct Domino {
 
     // MARK: Properties
 
-    let suitOne: Suit
-    let suitTwo: Suit
+    public let suitOne: Suit
+    public let suitTwo: Suit
 
     // MARK: Computed Properties
 
-    var rank: Int {
+    public var rank: Int {
         return suitOne.rawValue + suitTwo.rawValue
     }
 
-    var isDouble: Bool {
+    public var isDouble: Bool {
         return suitOne.rawValue == suitTwo.rawValue
     }
 
-    var isSingle: Bool {
+    public var isSingle: Bool {
         return !isDouble
     }
 
-    var suits: [Suit] {
+    public var suits: [Suit] {
         return [suitOne, suitTwo]
     }
 
