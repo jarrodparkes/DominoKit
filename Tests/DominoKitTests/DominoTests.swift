@@ -2,6 +2,8 @@
 
 import XCTest
 
+// MARK: - DominoTests: XCTestCase
+
 class DominoTests: XCTestCase {
     func testDominoInit() {
         for suitOne in Suit.allValues {

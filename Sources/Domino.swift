@@ -55,7 +55,7 @@ public struct Domino {
     }
 }
 
-// MARK: - Equatable
+// MARK: - Domino: Equatable
 
 extension Domino: Equatable {}
 
@@ -74,7 +74,7 @@ public func ==(lhs: Domino, rhs: Domino) -> Bool {
     }
 }
 
-// MARK: - Comparable
+// MARK: - Domino: Comparable
 
 extension Domino: Comparable {}
 
@@ -82,7 +82,7 @@ public func <(lhs: Domino, rhs: Domino) -> Bool {
     return lhs.rank < rhs.rank
 }
 
-// MARK: - CustomStringConvertible
+// MARK: - Domino: CustomStringConvertible
 
 extension Domino: CustomStringConvertible {
     public var description: String {

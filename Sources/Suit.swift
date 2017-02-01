@@ -32,7 +32,7 @@ public enum Suit: Int {
     }
 }
 
-// MARK: - Comparable
+// MARK: - Suit: Comparable
 
 extension Suit: Comparable {}
 
@@ -45,7 +45,7 @@ public func <(lhs: Suit, rhs: Suit) -> Bool {
     }
 }
 
-// MARK: - CustomStringConvertible
+// MARK: - Suit: CustomStringConvertible
 
 extension Suit: CustomStringConvertible {
     public var description: String {
