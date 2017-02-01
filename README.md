@@ -38,4 +38,10 @@ print(sixEight.rank) // 14
 
 let doubleSix = Domino(doubleSuit: .six)
 print(sixEight.hasMatchingSuit(withDomino: doubleSix)) // true
+
+let doubleNineSet = DominoSet.standardSet(.nine)
+doubleNineSet.shuffle()
+if let randomDomino = doubleNineSet.deal() {
+    print(randomDomino) // domino between "[00|00]" and "[09|09]"
+}
 ```
