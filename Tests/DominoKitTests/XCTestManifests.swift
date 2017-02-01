@@ -1,3 +1,5 @@
+// MARK: - SuitTests (All Tests)
+
 extension SuitTests {
 
     static var allTests = [
@@ -6,6 +8,8 @@ extension SuitTests {
         ("testSuitComparable", testSuitComparable)
     ]
 }
+
+// MARK: - DominoTests (All Tests)
 
 extension DominoTests {
 
@@ -18,5 +22,16 @@ extension DominoTests {
         ("testDominoSuits", testDominoSuits),
         ("testDominoHasMatchingSuit", testDominoHasMatchingSuit),
         ("testDominoEquatable", testDominoEquatable),
+    ]
+}
+
+// MARK: - DominoSetTests (All Tests)
+
+extension DominoSetTests {
+
+    static var allTests = [
+        ("testDominoSetInit", testDominoSetInit),
+        ("testDominoSetCount", testDominoSetCount),
+        ("testDominoSetDeal", testDominoSetDeal)
     ]
 }
