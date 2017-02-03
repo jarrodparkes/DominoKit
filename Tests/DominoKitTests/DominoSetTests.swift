@@ -19,7 +19,7 @@ class DominoSetTests: XCTestCase {
             }
         }
         while let domino = doubleSixSet.deal() {
-            ranks[domino.suitOne.rawValue * 10 + domino.suitTwo.rawValue * 100] = true
+            ranks[domino.hashValue] = true
         }
 
         for (_, rankFound) in ranks {

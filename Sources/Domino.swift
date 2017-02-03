@@ -89,3 +89,11 @@ extension Domino: CustomStringConvertible {
         return "[\(suitOne)|\(suitTwo)]"
     }
 }
+
+// MARK: - Domino: Hashable
+
+extension Domino: Hashable {
+    public var hashValue: Int {
+        return suitOne.rawValue * 10 + suitTwo.rawValue * 100
+    }
+}
