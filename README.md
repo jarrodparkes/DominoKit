@@ -10,7 +10,7 @@ DominoKit is a Swift library for creating applications with dominoes.
 
 ## Installation
 
-Using the Swift Package Manager, ensure the DominoKit is included in the dependencies section of `Package.swift`:
+Using the Swift Package Manager, ensure DominoKit is included in the dependencies section of `Package.swift`:
 
 ```swift
 let package = Package(
