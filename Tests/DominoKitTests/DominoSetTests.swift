@@ -15,7 +15,7 @@ class DominoSetTests: XCTestCase {
 
         for suitValueOne in 0...highestSuit.rawValue {
             for suitTwoValue in 0...suitValueOne {
-                ranks[suitValueOne * 10 + suitTwoValue * 100] = false
+                ranks[suitValueOne * 10 + suitTwoValue * 1000] = false
             }
         }
         while let domino = doubleSixSet.deal() {

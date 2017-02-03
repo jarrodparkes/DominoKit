@@ -94,6 +94,6 @@ extension Domino: CustomStringConvertible {
 
 extension Domino: Hashable {
     public var hashValue: Int {
-        return suitOne.rawValue * 10 + suitTwo.rawValue * 100
+        return suitOne.rawValue * 10 + suitTwo.rawValue * 1000
     }
 }

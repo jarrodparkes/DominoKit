@@ -88,4 +88,16 @@ class DominoTests: XCTestCase {
         XCTAssertNotEqual(doubleFive, fiveTwo)
         XCTAssertEqual(twoFive, fiveTwo)
     }
+
+    func testDominoHashable() {
+        let oneEight = Domino(suitOne: .eight, suitTwo: .one)
+        let eighteenZero = Domino(suitOne: .eighteen, suitTwo: .zero)
+        let doubleFive = Domino(doubleSuit: .five)
+        let threeEighteen = Domino(suitOne: .three, suitTwo: .eighteen)
+
+        XCTAssertEqual(oneEight.hashValue, 1080)
+        XCTAssertEqual(eighteenZero.hashValue, 180)
+        XCTAssertEqual(doubleFive.hashValue, 5050)
+        XCTAssertEqual(threeEighteen.hashValue, 18030)
+    }
 }
