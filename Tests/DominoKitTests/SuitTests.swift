@@ -11,6 +11,14 @@ class SuitTests: XCTestCase {
         XCTAssertEqual(values, suitRawValues)
     }
 
+    func testSuitFromZeroTo() {
+        let values = [0, 1, 2, 3, 4, 5, 6, 7]
+        let suitsThroughSeven = Suit.suitsFromZeroTo(.seven)
+        for x in 0..<suitsThroughSeven.count {
+            XCTAssertEqual(values[x], suitsThroughSeven[x].rawValue)
+        }
+    }
+
     func testSuitDescription() {
         let suits = Suit.allValues
         for suit in suits {

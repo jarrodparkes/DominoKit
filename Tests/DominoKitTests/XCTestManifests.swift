@@ -4,6 +4,7 @@ extension SuitTests {
 
     static var allTests = [
         ("testSuitRawValue", testSuitRawValue),
+        ("testSuitFromZeroTo", testSuitFromZeroTo),
         ("testSuitDescription", testSuitDescription),
         ("testSuitComparable", testSuitComparable)
     ]

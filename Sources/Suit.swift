@@ -15,10 +15,7 @@ public enum Suit: Int {
 
     // MARK: Properties
 
-    public static let allValues: [Suit] = [.zero,
-        .one, .two, .three, .four, .five, .six, .seven, .eight, .nine,
-        .ten, .eleven, .twelve, .thirteen, .fourteen, .fifteen, .sixteen, .seventeen, .eighteen
-    ]
+    public static let allValues: [Suit] = Suit.suitsFromZeroTo(.eighteen)
 
     // MARK: Custom Initializer
 
@@ -29,6 +26,16 @@ public enum Suit: Int {
         default:
             return nil
         }
+    }
+
+    // MARK: Helpers
+
+    public static func suitsFromZeroTo(_ highestSuit: Suit) -> [Suit] {
+        var suits = [Suit]()
+        for x in 0...highestSuit.rawValue {
+            suits.append(Suit(rawValue: x)!)
+        }
+        return suits
     }
 }
 
