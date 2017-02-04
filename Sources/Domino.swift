@@ -47,6 +47,10 @@ public struct Domino {
 
     // MARK: Functions
 
+    public func hasMatchingSuit(_ suit: Suit) -> Bool {
+        return suitOne == suit || suitTwo == suit
+    }
+    
     public func hasMatchingSuit(withDomino: Domino) -> Bool {
         return suitOne == withDomino.suitOne ||
             suitOne == withDomino.suitTwo ||

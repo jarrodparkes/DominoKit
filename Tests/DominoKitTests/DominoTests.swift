@@ -72,6 +72,17 @@ class DominoTests: XCTestCase {
     func testDominoHasMatchingSuit() {
         let doubleFive = Domino(doubleSuit: .five)
         let twoFive = Domino(suitOne: .two, suitTwo: .five)
+        let doubleFour = Domino(doubleSuit: .four)
+
+        XCTAssert(twoFive.hasMatchingSuit(.five))
+        XCTAssert(twoFive.hasMatchingSuit(doubleFive.suitOne))
+        XCTAssert(!doubleFive.hasMatchingSuit(twoFive.suitOne))
+        XCTAssert(!doubleFour.hasMatchingSuit(doubleFive.suitOne))
+    }
+
+    func testDominoHasMatchingSuitWithDomino() {
+        let doubleFive = Domino(doubleSuit: .five)
+        let twoFive = Domino(suitOne: .two, suitTwo: .five)
         let fiveZero = Domino(suitOne: .five, suitTwo: .zero)
         let doubleFour = Domino(doubleSuit: .four)
 
