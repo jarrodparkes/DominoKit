@@ -14,11 +14,11 @@ class DominoSetTests: XCTestCase {
             (highestSuit.rawValue + 1) * (highestSuit.rawValue + 2) / 2)
 
         for suitValueOne in 0...highestSuit.rawValue {
-            for suitTwoValue in 0...suitValueOne {
+            for suitTwoValue in suitValueOne...suitValueOne {
                 ranks[suitValueOne * 10 + suitTwoValue * 1000] = false
             }
         }
-        while let domino = doubleSixSet.deal() {
+        while let domino = doubleSixSet.deal() {            
             ranks[domino.hashValue] = true
         }
 

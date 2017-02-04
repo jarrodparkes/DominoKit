@@ -32,7 +32,7 @@ public struct DominoSet {
 
         var dominoes: [Domino] = []
         for suitValueOne in 0...highestSuit.rawValue {
-            for suitValueTwo in 0...suitValueOne {
+            for suitValueTwo in suitValueOne...highestSuit.rawValue {
                 dominoes.append(Domino(suitOne: Suit(rawValue: suitValueOne)!,
                     suitTwo: Suit(rawValue: suitValueTwo)!))
             }
