@@ -33,6 +33,7 @@ extension DominoSetTests {
 
     static var allTests = [
         ("testDominoSetInit", testDominoSetInit),
+        ("testDominoSetHighestSuit", testDominoSetHighestSuit),
         ("testDominoSetCount", testDominoSetCount),
         ("testDominoSetDeal", testDominoSetDeal)
     ]

@@ -12,19 +12,28 @@ class DominoSetTests: XCTestCase {
 
         XCTAssertEqual(doubleSixSet.count,
             (highestSuit.rawValue + 1) * (highestSuit.rawValue + 2) / 2)
+        XCTAssertEqual(doubleSixSet.highestSuit, highestSuit)
 
         for suitValueOne in 0...highestSuit.rawValue {
             for suitTwoValue in suitValueOne...suitValueOne {
                 ranks[suitValueOne * 10 + suitTwoValue * 1000] = false
             }
         }
-        while let domino = doubleSixSet.deal() {            
+        while let domino = doubleSixSet.deal() {
             ranks[domino.hashValue] = true
         }
 
         for (_, rankFound) in ranks {
             XCTAssert(rankFound)
         }
+    }
+
+    func testDominoSetHighestSuit() {
+        let dominoSet0 = DominoSet([Domino(doubleSuit: .fifteen), Domino(doubleSuit: .two)])
+        let dominoSet1 = DominoSet([Domino(doubleSuit: .zero), Domino(suitOne: .one, suitTwo: .three)])
+
+        XCTAssertEqual(dominoSet0.highestSuit, .fifteen)
+        XCTAssertEqual(dominoSet1.highestSuit, .three)
     }
 
     func testDominoSetCount() {

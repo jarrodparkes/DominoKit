@@ -15,6 +15,7 @@ public struct DominoSet {
     // MARK: Properties
 
     fileprivate var dominoes: [Domino]
+    public let highestSuit: Suit
 
     // MARK: Computed Properties
 
@@ -24,12 +25,26 @@ public struct DominoSet {
 
     // MARK: Initializers
 
-    public init(_ dominoes: [Domino]) {
+    init(_ dominoes: [Domino]) {
         self.dominoes = dominoes
+        var highestSuitDetected = Suit.zero
+        for domino in dominoes {
+            if domino.suitOne.rawValue > highestSuitDetected.rawValue {
+                highestSuitDetected = domino.suitOne
+            }
+            if domino.suitTwo.rawValue > highestSuitDetected.rawValue {
+                highestSuitDetected = domino.suitTwo
+            }
+        }
+        highestSuit = highestSuitDetected
+    }
+
+    private init(dominoes: [Domino], highestSuit: Suit) {
+        self.dominoes = dominoes
+        self.highestSuit = highestSuit
     }
 
     public static func standardSet(_ highestSuit: Suit) -> DominoSet {
-
         var dominoes: [Domino] = []
         for suitValueOne in 0...highestSuit.rawValue {
             for suitValueTwo in suitValueOne...highestSuit.rawValue {
@@ -37,8 +52,7 @@ public struct DominoSet {
                     suitTwo: Suit(rawValue: suitValueTwo)!))
             }
         }
-
-        return DominoSet(dominoes)
+        return DominoSet(dominoes: dominoes, highestSuit: highestSuit)
     }
 
     // MARK: Mutators
