@@ -80,15 +80,14 @@ class DominoTests: XCTestCase {
         XCTAssert(!doubleFour.hasMatchingSuit(doubleFive.suitOne))
     }
 
-    func testDominoHasMatchingSuitWithDomino() {
+    func testDominoMatches() {
         let doubleFive = Domino(doubleSuit: .five)
         let twoFive = Domino(suitOne: .two, suitTwo: .five)
         let fiveZero = Domino(suitOne: .five, suitTwo: .zero)
-        let doubleFour = Domino(doubleSuit: .four)
 
-        XCTAssert(twoFive.hasMatchingSuit(withDomino: doubleFive))
-        XCTAssert(fiveZero.hasMatchingSuit(withDomino: doubleFive))
-        XCTAssert(!doubleFour.hasMatchingSuit(withDomino: doubleFive))
+        XCTAssert(!twoFive.matches(doubleFive))
+        XCTAssert(!fiveZero.matches(doubleFive))
+        XCTAssert(fiveZero.matches(fiveZero))
     }
 
     func testDominoEquatable() {

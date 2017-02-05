@@ -22,7 +22,7 @@ extension DominoTests {
         ("testDominoIsSingle", testDominoIsSingle),
         ("testDominoSuits", testDominoSuits),
         ("testDominoHasMatchingSuit", testDominoHasMatchingSuit),
-        ("testDominoHasMatchingSuitWithDomino", testDominoHasMatchingSuitWithDomino),
+        ("testDominoMatches", testDominoMatches),
         ("testDominoEquatable", testDominoEquatable),
         ("testDominoHashable", testDominoHashable)
     ]
