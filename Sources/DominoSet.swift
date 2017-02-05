@@ -10,7 +10,7 @@ import FisherYates
 
 // MARK: - DominoSet
 
-public struct DominoSet {
+public class DominoSet {
 
     // MARK: Properties
 
@@ -55,23 +55,15 @@ public struct DominoSet {
         return DominoSet(dominoes: dominoes, highestSuit: highestSuit)
     }
 
-    // MARK: Mutators
+    // MARK: Dealing
 
-    public mutating func shuffle() {
+    public func shuffle() {
         dominoes.shuffle()
     }
 
-    public mutating func deal() -> Domino? {
+    public func deal() -> Domino? {
         guard !dominoes.isEmpty else { return nil }
         return dominoes.removeLast()
-    }
-}
-
-// MARK: - DominoSet: ExpressibleByArrayLiteral
-
-extension DominoSet: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: Domino...) {
-        self.init(elements)
     }
 }
 

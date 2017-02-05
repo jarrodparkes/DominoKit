@@ -8,7 +8,7 @@ class DominoSetTests: XCTestCase {
     func testDominoSetInit() {
         let highestSuit = Suit.six
         var ranks = [Int: Bool]()
-        var doubleSixSet = DominoSet.standardSet(highestSuit)
+        let doubleSixSet = DominoSet.standardSet(highestSuit)
 
         XCTAssertEqual(doubleSixSet.count,
             (highestSuit.rawValue + 1) * (highestSuit.rawValue + 2) / 2)
@@ -37,7 +37,7 @@ class DominoSetTests: XCTestCase {
     }
 
     func testDominoSetCount() {
-        var dominoSet = DominoSet([Domino(doubleSuit: .zero), Domino(doubleSuit: .six)])
+        let dominoSet = DominoSet([Domino(doubleSuit: .zero), Domino(doubleSuit: .six)])
 
         XCTAssertEqual(dominoSet.count, 2)
         let _ = dominoSet.deal()
@@ -48,7 +48,7 @@ class DominoSetTests: XCTestCase {
 
     func testDominoSetDeal() {
         let doubleSix = Domino(doubleSuit: .six)
-        var dominoSet = DominoSet([doubleSix])
+        let dominoSet = DominoSet([doubleSix])
 
         XCTAssertEqual(dominoSet.deal(), doubleSix)
         XCTAssertNil(dominoSet.deal())
