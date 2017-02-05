@@ -21,8 +21,7 @@ extension DominoTests {
         ("testDominoIsDouble", testDominoIsDouble),
         ("testDominoIsSingle", testDominoIsSingle),
         ("testDominoSuits", testDominoSuits),
-        ("testDominoHasMatchingSuit", testDominoHasMatchingSuit),
-        ("testDominoMatches", testDominoMatches),
+        ("testDominoHasMatchingSuit", testDominoHasMatchingSuit),        
         ("testDominoEquatable", testDominoEquatable),
         ("testDominoHashable", testDominoHashable)
     ]

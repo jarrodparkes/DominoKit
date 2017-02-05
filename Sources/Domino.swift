@@ -50,11 +50,6 @@ public struct Domino {
     public func hasMatchingSuit(_ suit: Suit) -> Bool {
         return suitOne == suit || suitTwo == suit
     }
-
-    public func matches(_ domino: Domino) -> Bool {
-        return (suitOne == domino.suitOne && suitTwo == domino.suitTwo) ||
-            (suitOne == domino.suitTwo && suitTwo == domino.suitOne)
-    }
 }
 
 // MARK: - Domino: Equatable
