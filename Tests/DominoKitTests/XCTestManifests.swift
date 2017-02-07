@@ -17,11 +17,12 @@ extension DominoTests {
     static var allTests = [
         ("testDominoInit", testDominoInit),
         ("testDominoDoubleInit", testDominoDoubleInit),
+        ("testDominoInitFromStringLiteral", testDominoInitFromStringLiteral),
         ("testDominoRank", testDominoRank),
         ("testDominoIsDouble", testDominoIsDouble),
         ("testDominoIsSingle", testDominoIsSingle),
         ("testDominoSuits", testDominoSuits),
-        ("testDominoHasMatchingSuit", testDominoHasMatchingSuit),        
+        ("testDominoHasMatchingSuit", testDominoHasMatchingSuit),
         ("testDominoEquatable", testDominoEquatable),
         ("testDominoHashable", testDominoHashable)
     ]

@@ -31,6 +31,8 @@ class SuitTests: XCTestCase {
     }
 
     func testSuitComparable() {
+        XCTAssertGreaterThan(Suit.two, Suit.invalid)
+        XCTAssertGreaterThan(Suit.invalid, Suit.invalid)        
         XCTAssertGreaterThan(Suit.two, Suit.zero)
         XCTAssertGreaterThan(Suit.eighteen, Suit.eight)
         XCTAssertGreaterThan(Suit.three, Suit.two)

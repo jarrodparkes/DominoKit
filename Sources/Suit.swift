@@ -9,6 +9,7 @@
 // MARK: - Suit
 
 public enum Suit: Int {
+    case invalid = -1
     case zero = 0
     case one, two, three, four, five, six, seven, eight, nine
     case ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen
@@ -24,13 +25,17 @@ public enum Suit: Int {
         case 0...18:
             self = Suit(rawValue: value)!
         default:
-            return nil
+            self = .invalid
         }
     }
 
     // MARK: Helpers
 
     public static func suitsFromZeroTo(_ highestSuit: Suit) -> [Suit] {
+        guard highestSuit != .invalid else {
+            return [Suit]()
+        }
+
         var suits = [Suit]()
         for x in 0...highestSuit.rawValue {
             suits.append(Suit(rawValue: x)!)
@@ -45,6 +50,10 @@ extension Suit: Comparable {}
 
 public func <(lhs: Suit, rhs: Suit) -> Bool {
     switch (lhs, rhs) {
+    case (.invalid, _):
+        return true
+    case (_, .invalid):
+        return false
     case (_, _) where lhs == rhs:
         return false
     default:
@@ -57,10 +66,14 @@ public func <(lhs: Suit, rhs: Suit) -> Bool {
 extension Suit: CustomStringConvertible {
     public var description: String {
         switch self {
+        case .invalid:
+            return "invalid"
         case _ where self.rawValue < 10:
             return "0\(self.rawValue)"
-        default:
+        case _ where self.rawValue >= 10 && self.rawValue != Suit.invalid.rawValue:
             return "\(self.rawValue)"
+        default:
+            return "unknown"
         }
     }
 }

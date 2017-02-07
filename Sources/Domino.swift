@@ -91,6 +91,65 @@ extension Domino: CustomStringConvertible {
 
 extension Domino: Hashable {
     public var hashValue: Int {
-        return suitOne.rawValue * 10 + suitTwo.rawValue * 1000
+        return (suitOne == .invalid || suitTwo == .invalid) ?
+            -1 : suitOne.rawValue * 10 + suitTwo.rawValue * 1000
+    }
+}
+
+import Foundation
+
+// MARK: - Domino: ExpressibleByStringLiteral
+
+extension Domino: ExpressibleByStringLiteral {
+
+    public init(unicodeScalarLiteral value: String) {
+        let suits = Domino.suitsFromStringLiteral(value)
+        suitOne = suits.0
+        suitTwo = suits.1
+    }
+
+    public init(extendedGraphemeClusterLiteral value: String) {
+        let suits = Domino.suitsFromStringLiteral(value)
+        suitOne = suits.0
+        suitTwo = suits.1
+    }
+
+    public init(stringLiteral value: String) {
+        let suits = Domino.suitsFromStringLiteral(value)
+        suitOne = suits.0
+        suitTwo = suits.1
+    }
+
+    private static func suitsFromStringLiteral(_ literal: String) -> (Suit, Suit) {
+        let dominoMatchGroups = extractDominoMatchGroups(fromString: literal)
+        guard dominoMatchGroups.count == 3 else {
+            return (.invalid, .invalid)
+        }
+        if let valueOne = Int(dominoMatchGroups[1]), let valueTwo = Int(dominoMatchGroups[2]) {
+            return (Suit(value: valueOne)!, Suit(value: valueTwo)!)
+        } else {
+            return (.invalid, .invalid)
+        }
+    }
+
+    private static func extractDominoMatchGroups(fromString: String) -> [String] {
+#if os(Linux)
+        let regex = try! RegularExpression(pattern: "^(\\[(0[0-9]|1[0-8])\\|(0[0-9]|1[0-8])\\])$", options: [])
+#else
+        let regex = try! NSRegularExpression(pattern: "^(\\[(0[0-9]|1[0-8])\\|(0[0-9]|1[0-8])\\])$", options: [])
+#endif
+        let nsString = NSString(string: fromString)
+        let all = NSRange(location: 0, length: nsString.length)
+
+        let matches = regex.matches(in: fromString, options: .reportCompletion, range: all)
+        guard matches.count > 0 else {
+            return [String]()
+        }
+
+        var results = [String]()
+        for index in 1..<matches[0].numberOfRanges {
+            results.append(nsString.substring(with: matches[0].rangeAt(index)))
+        }
+        return results
     }
 }
