@@ -1,14 +1,26 @@
 ![DominoKit](https://raw.githubusercontent.com/jarrodparkes/DominoKit/assets/domino-kit.png "Domino Kit")
 
-![Build Status](https://travis-ci.org/jarrodparkes/DominoKit.svg?branch=master&style=flat)
-![Version](https://img.shields.io/cocoapods/v/DominoKit.svg?style=flat)
-![License](https://img.shields.io/cocoapods/l/DominoKit.svg?style=flat)
+[![Build Status](https://travis-ci.org/jarrodparkes/DominoKit.svg?branch=master&style=flat)](https://travis-ci.org/jarrodparkes/DominoKit)
+[![Version](https://img.shields.io/cocoapods/v/DominoKit.svg?style=flat)](https://cocoapods.org/pods/DominoKit)
+[![License](https://img.shields.io/cocoapods/l/DominoKit.svg?style=flat)](https://opensource.org/licenses/MIT)
 
 ## Summary
 
 DominoKit is a Swift library for creating applications with dominoes.
 
 ## Installation
+
+### Cocoapods
+
+Create a `Podfile` and add DominoKit.
+
+```ruby
+target 'YourApp' do
+    pod 'DominoKit'
+end
+```
+
+### Swift Package Manager
 
 Using the Swift Package Manager, ensure DominoKit is included in the dependencies section of `Package.swift`:
 
