@@ -54,6 +54,7 @@ extension DominoSetTests {
         ("testDominoSetInit", testDominoSetInit),
         ("testDominoSetHighestSuit", testDominoSetHighestSuit),
         ("testDominoSetCount", testDominoSetCount),
-        ("testDominoSetDeal", testDominoSetDeal)
+        ("testDominoSetDeal", testDominoSetDeal),
+        ("testDominoSetEquality", testDominoSetEquality)
     ]
 }

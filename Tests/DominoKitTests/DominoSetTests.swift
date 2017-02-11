@@ -53,4 +53,13 @@ class DominoSetTests: XCTestCase {
         XCTAssertEqual(dominoSet.deal(), doubleSix)
         XCTAssertNil(dominoSet.deal())
     }
+
+    func testDominoSetEquality() {
+        let dominoSet1 = DominoSet(["[00|01]", "[05|04]"])
+        let dominoSet2 = DominoSet(["[01|00]", "[04|05]"])
+        let dominoSet3 = DominoSet([])
+
+        XCTAssertEqual(dominoSet1, dominoSet2)
+        XCTAssertNotEqual(dominoSet1, dominoSet3)
+    }
 }
