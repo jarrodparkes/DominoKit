@@ -1,3 +1,21 @@
+// MARK: - RandomTests (All Tests)
+
+extension RandomTests {
+
+    static var allTests = [
+        ("testRandom", testRandom)
+    ]
+}
+
+// MARK: - ShuffleTests (All Tests)
+
+extension ShuffleTests {
+
+    static var allTests = [
+        ("testShuffled", testShuffled)
+    ]
+}
+
 // MARK: - SuitTests (All Tests)
 
 extension SuitTests {

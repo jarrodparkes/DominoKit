@@ -6,8 +6,6 @@
 //  Copyright © 2017 Jarrod Parkes. All rights reserved.
 //
 
-import FisherYates
-
 // MARK: - DominoSet
 
 public class DominoSet {

@@ -1,8 +1,9 @@
 ![DominoKit](https://raw.githubusercontent.com/jarrodparkes/DominoKit/assets/domino-kit.png "Domino Kit")
 
-<img src="https://img.shields.io/badge/os-mac | linux-blue.svg?style=flat" alt="Mac and Linux" />
-<a href="https://raw.githubusercontent.com/jarrodparkes/DominoKit/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-orange.svg?style=flat" alt="Swift 3 Compatible" /></a>
+[![CI Status](http://img.shields.io/travis/dd3e41d8d1f44baaeb486a5184520aaf7a002c26/DominoKit.svg?style=flat)](https://travis-ci.org/jarrodparkes/DominoKit)
+[![Version](https://img.shields.io/cocoapods/v/DominoKit.svg?style=flat)](http://cocoapods.org/pods/DominoKit)
+[![License](https://img.shields.io/cocoapods/l/DominoKit.svg?style=flat)](http://cocoapods.org/pods/DominoKit)
+[![Platform](https://img.shields.io/cocoapods/p/DominoKit.svg?style=flat)](http://cocoapods.org/pods/DominoKit)
 
 ## Summary
 
@@ -17,9 +18,7 @@ let package = Package(
     name: "MyProject",
     dependencies: [
         .Package(url: "https://github.com/jarrodparkes/DominoKit.git", majorVersion: 1),
-        ...
     ]
-    ...
 )
 ```
 
@@ -39,9 +38,16 @@ print(sixEight.rank) // 14
 let doubleSix = Domino(doubleSuit: .six)
 print(sixEight.hasMatchingSuit(withDomino: doubleSix)) // true
 
+let oneFive = "[01|05]"
+print(oneFive.rank) // 6
+
 let doubleNineSet = DominoSet.standardSet(.nine)
 doubleNineSet.shuffle()
 if let randomDomino = doubleNineSet.deal() {
     print(randomDomino) // domino between "[00|00]" and "[09|09]"
 }
 ```
+
+## License
+
+DominoKit is available under the MIT license. See the LICENSE file for more info.
