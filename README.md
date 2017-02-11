@@ -1,6 +1,6 @@
 ![DominoKit](https://raw.githubusercontent.com/jarrodparkes/DominoKit/assets/domino-kit.png "Domino Kit")
 
-[![CI Status](http://img.shields.io/travis/dd3e41d8d1f44baaeb486a5184520aaf7a002c26/DominoKit.svg?style=flat)](https://travis-ci.org/jarrodparkes/DominoKit)
+[![Build Status](https://travis-ci.org/jarrodparkes/DominoKit.svg?branch=master&style=flat)](https://travis-ci.org/jarrodparkes/DominoKit)
 [![Version](https://img.shields.io/cocoapods/v/DominoKit.svg?style=flat)](http://cocoapods.org/pods/DominoKit)
 [![License](https://img.shields.io/cocoapods/l/DominoKit.svg?style=flat)](http://cocoapods.org/pods/DominoKit)
 [![Platform](https://img.shields.io/cocoapods/p/DominoKit.svg?style=flat)](http://cocoapods.org/pods/DominoKit)
