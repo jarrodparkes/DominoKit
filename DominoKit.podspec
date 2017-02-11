@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DominoKit'
-  s.version          = '1.3.1'
+  s.version          = '1.3.2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage         = 'https://github.com/jarrodparkes/DominoKit'
   s.summary          = 'Swift library for creating applications with dominoes.'
@@ -19,6 +19,6 @@ DominoKit defines structures representing individual domino and domino sets that
   s.source           = { :git => 'https://github.com/jarrodparkes/DominoKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/jarrodparkes'
   s.ios.deployment_target = '8.0'
-  s.exclude_files = 'Sources/Random.swift'
+  s.exclude_files = 'Sources/SPM+Random.swift'
   s.source_files = 'Sources/**/*'
 end

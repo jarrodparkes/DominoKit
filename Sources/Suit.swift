@@ -8,6 +8,14 @@
 
 // MARK: - Suit
 
+/**
+    The value of one end of a domino which corresponds to the number of dots,
+    also known as pips, seen on its face.
+
+    - invalid: An erroneous, impossible value.
+    - zero: The absense of a value, or blank.
+    - [remaining values]: The number of dots present on this end of the domino.
+*/
 public enum Suit: Int {
     case invalid = -1
     case zero = 0
@@ -16,10 +24,20 @@ public enum Suit: Int {
 
     // MARK: Properties
 
+    /// An array containing all possible, valid suits.
     public static let allValues: [Suit] = Suit.suitsFromZeroTo(.eighteen)
 
     // MARK: Custom Initializer
 
+    /**
+        Initializes a suit from an integer value.
+
+        - Parameter value: An integer representing the number of dots present
+          for a particular suit
+
+        - Returns: If the value given is valid, then a suit is returned where
+          its number of dots is equal to the value.
+    */
     public init?(value: Int) {
         switch value {
         case 0...18:
@@ -31,6 +49,14 @@ public enum Suit: Int {
 
     // MARK: Helpers
 
+    /**
+        Generates an array of suits ranging from zero to a specified suit.
+
+        - Parameter highestSuit: The upper bound for the range of suits to be
+          generated
+
+        - Returns: An array of suits ranging from zero to a specified suit.
+    */
     public static func suitsFromZeroTo(_ highestSuit: Suit) -> [Suit] {
         guard highestSuit != .invalid else {
             return [Suit]()
@@ -48,6 +74,17 @@ public enum Suit: Int {
 
 extension Suit: Comparable {}
 
+/**
+    Compares two suits to determine if the first suit is less than the second
+    suit.
+
+    - Parameters:
+        lhs: The first suit
+        rhs: The second suit
+
+    - Returns: A Boolean value indicating if the first suit is less than the
+      second suit.
+*/
 public func <(lhs: Suit, rhs: Suit) -> Bool {
     switch (lhs, rhs) {
     case (.invalid, _):
@@ -64,6 +101,7 @@ public func <(lhs: Suit, rhs: Suit) -> Bool {
 // MARK: - Suit: CustomStringConvertible
 
 extension Suit: CustomStringConvertible {
+    /// Textual representation of a domino.
     public var description: String {
         switch self {
         case .invalid:
