@@ -223,7 +223,11 @@ extension Domino: ExpressibleByStringLiteral {
 
         var results = [String]()
         for index in 1..<matches[0].numberOfRanges {
+#if os(Linux)
+            results.append(nsString.substring(with: matches[0].range(at: index)))
+#else
             results.append(nsString.substring(with: matches[0].rangeAt(index)))
+#endif
         }
         return results
     }
