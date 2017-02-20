@@ -1,0 +1,8 @@
+{
+    "type": "sandbox",
+    "title": "DominoKit",
+    "description": "Learn how to use DominoKit.",
+    "swiftversion": "swift-3.0.2-RELEASE-ubuntu14.04",
+    "giturl": "https://github.com/jarrodparkes/DominoKit-Sample",
+    "gittag": "1.0.0"
+}
