@@ -47,9 +47,9 @@ print(sixEight.isSingle) // true
 print(sixEight.rank) // 14
 
 let doubleSix = Domino(doubleSuit: .six)
-print(sixEight.hasMatchingSuit(withDomino: doubleSix)) // true
+print(sixEight.hasMatchingSuit(.six)) // true
 
-let oneFive = "[01|05]"
+let oneFive: Domino = "[01|05]"
 print(oneFive.rank) // 6
 
 let doubleNineSet = DominoSet.standardSet(.nine)
