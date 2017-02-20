@@ -45,8 +45,6 @@ print(sixEight.suitTwo) // "08"
 print(sixEight.isDouble) // false
 print(sixEight.isSingle) // true
 print(sixEight.rank) // 14
-
-let doubleSix = Domino(doubleSuit: .six)
 print(sixEight.hasMatchingSuit(.six)) // true
 
 let oneFive: Domino = "[01|05]"
