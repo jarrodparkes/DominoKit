@@ -20,6 +20,6 @@ class ShuffleTests: XCTestCase {
             values = valuesCopy
         }
         let result = Double(count) / 1000.00
-        XCTAssertEqualWithAccuracy(result, 1, accuracy: 0.02)
+        XCTAssertEqual(result, 1, accuracy: 0.02)
     }
 }
