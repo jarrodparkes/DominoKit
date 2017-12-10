@@ -2,7 +2,7 @@
     "type": "sandbox",
     "title": "DominoKit",
     "description": "Learn how to use DominoKit.",
-    "swiftversion": "swift-3.1-RELEASE-ubuntu14.04",
+    "swiftversion": "swift-4.0.3-RELEASE",
     "giturl": "https://github.com/jarrodparkes/DominoKit-Sample",
-    "gittag": "1.4.0"
+    "gittag": "1.5.0"
 }
