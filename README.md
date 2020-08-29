@@ -59,4 +59,4 @@ if let randomDomino = doubleNineSet.deal() {
 
 ## License
 
-DominoKit is available under the MIT license. See the LICENSE file for more info.
+DominoKit is available under the Apache 2.0 license. See the LICENSE file for more info.
