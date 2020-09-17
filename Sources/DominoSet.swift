@@ -75,7 +75,7 @@ public class DominoSet {
 
     /// Randomly shuffles all dominoes in the set.
     public func shuffle() {
-        dominoes.shuffle()
+        dominoes = dominoes.shuffled()
     }
 
     /**

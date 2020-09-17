@@ -144,10 +144,13 @@ extension Domino: CustomStringConvertible {
 // MARK: - Domino: Hashable
 
 extension Domino: Hashable {
-    /// Hash value of a domino.
     public var hashValue: Int {
         return (suitOne == .invalid || suitTwo == .invalid) ?
             -1 : suitOne.rawValue * 10 + suitTwo.rawValue * 1000
+    }
+        
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(hashValue)
     }
 }
 
